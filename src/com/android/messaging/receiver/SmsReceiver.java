@@ -186,14 +186,13 @@ public final class SmsReceiver extends BroadcastReceiver {
             return;
         }
 
-        final int errorCode =
-                intent.getIntExtra(EXTRA_ERROR_CODE, SendStatusReceiver.NO_ERROR_CODE);
+        final int errorCode = intent.getIntExtra(EXTRA_ERROR_CODE, 0);
         // Always convert negative subIds into -1
         int subId = PhoneUtils.getDefault().getEffectiveIncomingSubIdFromSystem(
                 intent, EXTRA_SUB_ID);
         deliverSmsMessages(context, subId, errorCode, messages);
         if (MmsUtils.isDumpSmsEnabled()) {
-            final String format = intent.getStringExtra("format");
+            final String format = null;
             DebugUtils.dumpSms(messages[0].getTimestampMillis(), messages, format);
         }
     }

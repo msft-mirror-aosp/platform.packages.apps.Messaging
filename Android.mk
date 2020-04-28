@@ -48,7 +48,6 @@ include $(LOCAL_PATH)/version.mk
 
 LOCAL_AAPT_FLAGS += --version-name "$(version_name_package)"
 LOCAL_AAPT_FLAGS += --version-code $(version_code_package)
-LOCAL_AAPT_FLAGS += --legacy
 
 ifdef TARGET_BUILD_APPS
     LOCAL_JNI_SHARED_LIBRARIES := libframesequence libgiftranscode
@@ -70,12 +69,6 @@ LOCAL_PACKAGE_NAME := messaging
 LOCAL_CERTIFICATE := platform
 
 LOCAL_SDK_VERSION := current
-
-LOCAL_PRODUCT_MODULE := true
-
-LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_APPS)
-
-LOCAL_COMPATIBILITY_SUITE := general-tests
 
 include $(BUILD_PACKAGE)
 

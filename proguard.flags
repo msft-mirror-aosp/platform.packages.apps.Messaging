@@ -14,7 +14,12 @@
 #
 # Keep enough data for stack traces
 -renamesourcefileattribute SourceFile
--keepattributes SourceFile,LineNumberTable,*Annotation*
+-keepattributes SourceFile,
+                LineNumberTable,
+                RuntimeVisibleAnnotations,
+                RuntimeVisibleParameterAnnotations,
+                RuntimeVisibleTypeAnnotations,
+                AnnotationDefault
 
 # Keep classes and methods that have the guava @VisibleForTesting annotation
 # TODO(b/373579455): Evaluate if <init> needs to be kept.
